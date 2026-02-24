@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/kubAuto/static/css/main.abb49184.css",
-    "main.js": "/kubAuto/static/js/main.5af1cf5a.js",
-    "static/media/hero.jpg": "/kubAuto/static/media/hero.35d726374270f932aa98.jpg",
-    "index.html": "/kubAuto/index.html",
-    "main.abb49184.css.map": "/kubAuto/static/css/main.abb49184.css.map",
-    "main.5af1cf5a.js.map": "/kubAuto/static/js/main.5af1cf5a.js.map"
+    "main.css": "/kubAutoExample/static/css/main.777da124.css",
+    "main.js": "/kubAutoExample/static/js/main.5af1cf5a.js",
+    "static/media/hero.jpg": "/kubAutoExample/static/media/hero.35d726374270f932aa98.jpg",
+    "index.html": "/kubAutoExample/index.html",
+    "main.777da124.css.map": "/kubAutoExample/static/css/main.777da124.css.map",
+    "main.5af1cf5a.js.map": "/kubAutoExample/static/js/main.5af1cf5a.js.map"
   },
   "entrypoints": [
-    "static/css/main.abb49184.css",
+    "static/css/main.777da124.css",
     "static/js/main.5af1cf5a.js"
   ]
 }
