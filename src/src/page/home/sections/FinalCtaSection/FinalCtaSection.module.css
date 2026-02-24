@@ -1,0 +1,105 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.finalCta {
+    padding: 92px 0;
+    background: #0b0b0e;
+}
+
+.kickerGold {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 950;
+    letter-spacing: 2px;
+    color: #c9a25d;
+}
+
+.h2OnDark {
+    margin: 12px 0 0;
+    font-size: 46px;
+    font-weight: 950;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+}
+
+.subOnDark {
+    margin: 10px 0 0;
+    font-size: 14px;
+    font-weight: 650;
+    color: #b9bdc7;
+}
+
+.finalActions {
+    margin-top: 22px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* geometry only (colors/borders are in lux variants) */
+.primaryButton,
+.secondaryButton {
+    height: 54px;
+    padding: 0 20px;
+    border-radius: 16px;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
+/* keep font weights per design */
+.primaryButton {
+    font-weight: 950;
+}
+
+.secondaryButton {
+    font-weight: 850;
+}
+
+.contactStrip {
+    margin-top: 26px;
+    border-radius: 22px;
+    background: #11131a;
+    border: 1px solid #2b2e3e;
+    padding: 22px;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.contactLabel {
+    font-size: 13px;
+    font-weight: 650;
+    color: #b9bdc7;
+}
+
+.contactValue {
+    margin-top: 6px;
+    font-size: 18px;
+    font-weight: 950;
+    color: #ffffff;
+}
+
+.contactValueSmall {
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: 900;
+    color: #ffffff;
+}
+
+@media (max-width: 1024px) {
+    .contactStrip {
+        grid-template-columns: 1fr;
+    }
+
+    .h2OnDark {
+        font-size: 38px;
+    }
+}

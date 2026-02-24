@@ -1,0 +1,187 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.section {
+    padding: 92px 0;
+    background: #ffffff;
+}
+
+.sectionHead {
+    margin-bottom: 26px;
+}
+
+.h2 {
+    margin: 0;
+    font-size: 34px;
+    font-weight: 950;
+    color: #121317;
+}
+
+.sub {
+    margin: 10px 0 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #6b7280;
+}
+
+.processCard {
+    border-radius: 22px;
+    background: #f5f6f8;
+    border: 1px solid #e6e7ea;
+    padding: 26px;
+}
+
+.processSteps {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.step {
+    display: grid;
+    gap: 6px;
+    justify-items: center;
+    min-width: 120px;
+}
+
+.stepDotActive,
+.stepDot {
+    width: 12px;
+    height: 12px;
+    border-radius: 999px;
+    background: #121317;
+    position: relative;
+}
+
+.stepDotActive {
+    background: #c9a25d;
+}
+
+.stepDotActive::after {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    border-radius: 999px;
+    background: #0b0b0e;
+}
+
+.stepDot::after {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    border-radius: 999px;
+    background: #c9a25d;
+}
+
+.stepTitle {
+    font-size: 14px;
+    font-weight: 950;
+    color: #121317;
+}
+
+.stepSub {
+    font-size: 12px;
+    font-weight: 650;
+    color: #6b7280;
+}
+
+.stepLine {
+    height: 2px;
+    flex: 1 1 auto;
+    background: #e6e7ea;
+}
+
+.ctaBar {
+    margin-top: 22px;
+    border-radius: 22px;
+    background: #0b0b0e;
+    border: 1px solid #2b2e3e;
+    padding: 22px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.ctaTitle {
+    font-size: 18px;
+    font-weight: 950;
+    color: #ffffff;
+}
+
+.ctaText {
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #b9bdc7;
+}
+
+.primaryButtonDark {
+    height: 52px;
+    padding: 0 20px;
+    border-radius: 16px;
+    background: #c9a25d;
+    color: #0b0b0e;
+    font-size: 15px;
+    font-weight: 950;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+}
+
+@media (max-width: 1024px) {
+    .processSteps {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .stepLine {
+        display: none;
+    }
+
+    .ctaBar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 640px) {
+    /* vertical timeline layout */
+    .processSteps {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0;
+    }
+
+    /* step becomes centered, stacked */
+    .step {
+        min-width: 0;
+        width: 100%;
+        max-width: 320px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        padding: 10px 0;
+        gap: 6px;
+    }
+
+    /* connector becomes vertical and centered */
+    .stepLine {
+        display: block;               /* override 1024px hide */
+        flex: 0 0 auto;               /* stop flex stretching */
+        width: 2px;
+        height: 26px;
+        background: #e6e7ea;
+        margin: 0 auto;
+    }
+}

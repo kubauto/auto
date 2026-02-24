@@ -1,0 +1,116 @@
+/* Shared interactive styling (no ::after shine) */
+
+/* base interactive */
+.lux {
+    transition:
+            transform 160ms ease,
+            background-color 160ms ease,
+            border-color 160ms ease,
+            box-shadow 160ms ease,
+            color 160ms ease,
+            opacity 160ms ease;
+    will-change: transform;
+}
+
+/* hover */
+.lux:hover {
+    transform: translateY(-2px);
+    box-shadow:
+            0 10px 24px rgba(0, 0, 0, 0.28),
+            0 0 0 1px rgba(201, 162, 93, 0.18) inset;
+}
+
+/* active */
+.lux:active {
+    transform: translateY(0);
+    box-shadow:
+            0 6px 16px rgba(0, 0, 0, 0.22),
+            0 0 0 1px rgba(201, 162, 93, 0.12) inset;
+}
+
+/* keyboard focus */
+.lux:focus-visible {
+    outline: none;
+    box-shadow:
+            0 0 0 3px rgba(201, 162, 93, 0.28),
+            0 10px 24px rgba(0, 0, 0, 0.28);
+}
+
+/* =========================
+   Variants
+   ========================= */
+
+/* Dark glass button/link */
+.luxDark {
+    background: rgba(20, 22, 34, 0.9);
+    border: 1px solid rgba(43, 46, 62, 0.95);
+    color: #ffffff;
+}
+
+.luxDark:hover {
+    background: rgba(20, 22, 34, 0.98);
+    border-color: rgba(201, 162, 93, 0.75);
+}
+
+/* Gold primary */
+.luxGold {
+    background: #c9a25d;
+    border: 1px solid rgba(201, 162, 93, 0.8);
+    color: #0b0b0e;
+}
+
+.luxGold:hover {
+    border-color: rgba(255, 255, 255, 0.22);
+}
+
+/* Icon button */
+.luxIcon {
+    background: #141622;
+    border: 1px solid #2b2e3e;
+    color: #ffffff;
+}
+
+.luxIcon:hover {
+    border-color: rgba(201, 162, 93, 0.75);
+}
+
+/* Text link (for WhatsApp/Telegram plain links etc.) */
+.luxLink {
+    color: #c9a25d;
+    text-decoration: none;
+    opacity: 0.9;
+    transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.luxLink:hover {
+    opacity: 1;
+    transform: translateY(-1px);
+}
+
+.luxLink:focus-visible {
+    outline: none;
+    text-decoration: underline;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .lux,
+    .luxLink,
+    .card,
+    .review,
+    .faqRow,
+    .missionStrip,
+    .processCard {
+        transition: none;
+    }
+
+    .lux:hover,
+    .lux:active,
+    .luxLink:hover,
+    .card:hover,
+    .review:hover,
+    .faqRow:hover,
+    .missionStrip:hover,
+    .processCard:hover {
+        transform: none;
+    }
+}

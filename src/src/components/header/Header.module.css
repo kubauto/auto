@@ -1,0 +1,320 @@
+/* src/components/Header/Header.module.css */
+
+/* =========================
+   DESKTOP BASE
+   ========================= */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: 88px;
+    background: rgba(7, 7, 10, 0.75);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.container {
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    min-width: 220px;
+}
+
+.logoMark {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: #c9a25d;
+    flex: 0 0 auto;
+}
+
+.logoText {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.logoName {
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+}
+
+.logoSub {
+    margin-top: 2px;
+    font-size: 11px;
+    font-weight: 500;
+    color: #b9bdc7;
+}
+
+/* Desktop nav */
+.navDesktop {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    flex: 1 1 auto;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+.navLink {
+    font-size: 14px;
+    font-weight: 600;
+    color: #e6e7ea;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+.navLink:hover {
+    opacity: 1;
+}
+
+.navActive {
+    font-size: 14px;
+    font-weight: 750;
+    color: #ffffff;
+    text-decoration: none;
+    position: relative;
+}
+
+.navActive::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 100%;
+    height: 2px;
+    background: #c9a25d;
+    border-radius: 2px;
+}
+
+/* Desktop actions */
+.actionsDesktop {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 0 0 auto;
+    white-space: nowrap;
+}
+
+.iconButton {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: #141622;
+    border: 1px solid #2b2e3e;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.primaryButton {
+    margin-left: 12px;
+    height: 40px;
+    padding: 0 20px;
+    border-radius: 12px;
+    background: #c9a25d;
+    color: #0b0b0e;
+    font-size: 14px;
+    font-weight: 900;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =========================
+   MOBILE MENU
+   ========================= */
+
+/* Burger */
+.burger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.burger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #ffffff;
+    margin: 5px 0;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(7, 7, 10, 0.55);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 10000; /* было 999 */
+}
+
+.mobileMenu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: min(86vw, 360px);
+    max-width: 100%;
+    box-sizing: border-box;
+    background: #07070a;
+    color: #ffffff;
+    transform: translateX(100%);
+    transition: transform 0.28s ease;
+    z-index: 10001; /* было 1000 */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    will-change: transform;
+}
+
+.overlayOpen {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.open {
+    transform: translateX(0);
+}
+
+/* Drawer header row */
+.mobileTop {
+    height: 88px;
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mobileLogo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.mobileLogoText {
+    font-size: 14px;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 0.04em;
+}
+
+.close {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: #141622;
+    border: 1px solid #2b2e3e;
+    color: #ffffff;
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+/* Scrollable content area */
+.mobileNav {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.mobileLink {
+    font-size: 20px;
+    font-weight: 850;
+    color: #ffffff;
+    text-decoration: none;
+    opacity: 0.92;
+}
+
+.mobileLink:hover {
+    opacity: 1;
+}
+
+.mobileLinkActive {
+    color: #c9a25d;
+}
+
+.mobileActions {
+    padding: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.mobileActionLink {
+    color: #c9a25d;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.mobileCTA {
+    margin-top: 8px;
+    padding: 14px 14px;
+    border-radius: 14px;
+    background: #c9a25d;
+    color: #0b0b0e;
+    font-weight: 950;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .navDesktop,
+    .actionsDesktop {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+    }
+}
+
+/* Optional: tighten slightly at mid widths */
+@media (max-width: 1200px) {
+    .navDesktop {
+        gap: 24px;
+    }
+
+    .container {
+        padding: 0 16px;
+    }
+
+    .primaryButton {
+        padding: 0 16px;
+    }
+}

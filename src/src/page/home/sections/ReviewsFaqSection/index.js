@@ -1,0 +1,1 @@
+export { ReviewsFaqSection } from "./ReviewsFaqSection";

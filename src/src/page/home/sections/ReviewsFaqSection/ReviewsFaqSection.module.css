@@ -1,0 +1,157 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.section {
+    padding: 92px 0;
+    background: #ffffff;
+}
+
+.sectionHead {
+    margin-bottom: 26px;
+}
+
+.h2 {
+    margin: 0;
+    font-size: 34px;
+    font-weight: 950;
+    color: #121317;
+}
+
+.sub {
+    margin: 10px 0 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #6b7280;
+}
+
+.grid3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.review {
+    border-radius: 22px;
+    background: #f5f6f8;
+    border: 1px solid #e6e7ea;
+    padding: 22px;
+
+    transition:
+            transform 160ms ease,
+            box-shadow 160ms ease,
+            border-color 160ms ease;
+    will-change: transform;
+}
+
+.review:hover {
+    transform: translateY(-4px);
+    border-color: rgba(201, 162, 93, 0.55);
+    box-shadow:
+            0 22px 38px rgba(0, 0, 0, 0.16),
+            0 0 0 1px rgba(201, 162, 93, 0.18) inset;
+}
+
+.review:active {
+    transform: translateY(-2px);
+    box-shadow:
+            0 18px 30px rgba(0, 0, 0, 0.14),
+            0 0 0 1px rgba(201, 162, 93, 0.12) inset;
+}
+
+.review:focus-visible {
+    outline: none;
+    border-color: rgba(201, 162, 93, 0.75);
+    box-shadow:
+            0 0 0 3px rgba(201, 162, 93, 0.24),
+            0 22px 38px rgba(0, 0, 0, 0.16);
+}
+
+.reviewQuote {
+    font-size: 18px;
+    font-weight: 950;
+    color: #121317;
+}
+
+.reviewText {
+    margin-top: 10px;
+    font-size: 13px;
+    font-weight: 650;
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+.reviewMeta {
+    margin-top: 18px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #6b7280;
+}
+
+/* FAQ */
+.faq {
+    display: grid;
+    gap: 12px;
+}
+
+.faqRow {
+    border-radius: 20px;
+    background: #f5f6f8;
+    border: 1px solid #e6e7ea;
+    padding: 18px 20px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    align-items: center;
+
+    transition:
+            transform 160ms ease,
+            box-shadow 160ms ease,
+            border-color 160ms ease;
+    will-change: transform;
+}
+
+.faqRow:hover {
+    transform: translateY(-3px);
+    border-color: rgba(201, 162, 93, 0.55);
+    box-shadow:
+            0 20px 34px rgba(0, 0, 0, 0.15),
+            0 0 0 1px rgba(201, 162, 93, 0.16) inset;
+}
+
+.faqRow:active {
+    transform: translateY(-1px);
+}
+
+.faqRow:focus-visible {
+    outline: none;
+    border-color: rgba(201, 162, 93, 0.75);
+    box-shadow:
+            0 0 0 3px rgba(201, 162, 93, 0.24),
+            0 20px 34px rgba(0, 0, 0, 0.15);
+}
+
+.faqQ {
+    font-size: 14px;
+    font-weight: 950;
+    color: #121317;
+}
+
+.faqA {
+    font-size: 14px;
+    font-weight: 650;
+    color: #6b7280;
+}
+
+@media (max-width: 1024px) {
+    .grid3 {
+        grid-template-columns: 1fr;
+    }
+
+    .faqRow {
+        grid-template-columns: 1fr;
+    }
+}

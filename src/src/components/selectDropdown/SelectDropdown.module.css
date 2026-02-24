@@ -1,0 +1,87 @@
+.field {
+    position: relative;
+    display: grid;
+    gap: 8px;
+}
+
+.control {
+    height: 54px;
+    padding: 0 16px;
+    border-radius: 16px;
+    background: #ffffff;
+    border: 1px solid #e6e7ea;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    cursor: pointer;
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.control:hover {
+    border-color: rgba(201, 162, 93, 0.45);
+}
+
+.control:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(201, 162, 93, 0.18);
+}
+
+.value {
+    font-size: 14px;
+    font-weight: 700;
+    color: #121317;
+}
+
+.placeholder {
+    font-size: 14px;
+    font-weight: 650;
+    color: #9aa0aa;
+}
+
+.chevron {
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid #6b7280;
+    border-bottom: 2px solid #6b7280;
+    transform: rotate(45deg);
+}
+
+/* Dropdown menu */
+.menu {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #e6e7ea;
+    box-shadow:
+            0 24px 40px rgba(0, 0, 0, 0.18),
+            0 4px 10px rgba(0, 0, 0, 0.08);
+
+    max-height: 240px;
+    overflow-y: auto;
+    z-index: 20;
+}
+
+/* Items */
+.item {
+    padding: 14px 16px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #121317;
+    cursor: pointer;
+
+    transition: background 120ms ease;
+}
+
+.item:hover {
+    background: rgba(201, 162, 93, 0.12);
+}
+
+.active {
+    background: rgba(201, 162, 93, 0.18);
+}
