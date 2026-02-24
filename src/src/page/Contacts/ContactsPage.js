@@ -3,6 +3,7 @@ import * as Yup from "yup";
 import { useRef, useState } from "react";
 import styles from "./ContactsPage.module.css";
 import { Toast } from "../../components/toast/Toast";
+import {API_BASE} from "../../config/api";
 
 const schema = Yup.object({
     name: Yup.string().trim().min(2, "Too short").max(140, "Too long").required("Required"),
@@ -169,7 +170,7 @@ export const ContactsPage = () => {
                                 validateOnBlur={true}
                                 onSubmit={async (values, helpers) => {
                                     try {
-                                        const res = await fetch("/api/contact", {
+                                        const res = await fetch(`${API_BASE}/api/contact`, {
                                             method: "POST",
                                             headers: { "Content-Type": "application/json" },
                                             body: JSON.stringify(values),

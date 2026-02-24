@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import styles from "./PreOrderPage.module.css";
 import { Toast } from "../../components/toast/Toast";
 import {SelectDropdown} from "../../components/selectDropdown/SelectDropdown";
+import {API_BASE} from "../../config/api";
 
 const normalizePhone = (v) => {
     const s = String(v ?? "").trim();
@@ -90,7 +91,7 @@ export const PreOrderPage = () => {
                                     phone: normalizePhone(values.phone),
                                 };
 
-                                const res = await fetch("/api/preorder", {
+                                const res = await fetch(`${API_BASE}/api/preorder`, {
                                     method: "POST",
                                     headers: { "Content-Type": "application/json" },
                                     body: JSON.stringify(payload),
