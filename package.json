@@ -1,6 +1,5 @@
 {
   "name": "auto",
-  "homepage": "https://rudoykolya.github.io/auto/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
