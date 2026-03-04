@@ -21,7 +21,10 @@ export const HeroSection = () => {
                     </NavLink>
 
                     <a href="https://wa.me/37068803122" target="_blank" rel="noreferrer" className={`${styles.secondaryButton} lux luxDark`}>
-                        WhatsApp / Telegram
+                        WhatsApp
+                    </a>
+                    <a href="https://wa.me/37068803122" target="_blank" rel="noreferrer" className={`${styles.secondaryButton} lux luxDark`}>
+                        Telegram
                     </a>
                 </div>
 

@@ -30,7 +30,7 @@ export const AboutPage = () => {
 
                         <a
                             className={`${styles.heroBtn} lux luxDark`}
-                            href="https://t.me/kolyakolya12"
+                            href="https://t.me/dkud13"
                             target="_blank"
                             rel="noreferrer"
                         >
@@ -236,7 +236,7 @@ export const AboutPage = () => {
                             </a>
                             <a
                                 className={`${styles.bottomBtn} lux luxDark`}
-                                href="https://t.me/kolyakolya12"
+                                href="https://t.me/dkud13"
                                 target="_blank"
                                 rel="noreferrer"
                             >

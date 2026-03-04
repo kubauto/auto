@@ -23,7 +23,7 @@ export const FinalCtaSection = () => {
                         WhatsApp
                     </a>
 
-                    <a href="https://t.me/kolyakolya12" target="_blank" rel="noreferrer" className={`${styles.secondaryButton} lux luxDark`}>
+                    <a href="https://t.me/dkud13" target="_blank" rel="noreferrer" className={`${styles.secondaryButton} lux luxDark`}>
                         Telegram
                     </a>
                 </div>

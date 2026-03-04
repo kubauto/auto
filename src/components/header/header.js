@@ -109,7 +109,7 @@ export const Header = () => {
                         WA
                     </a>
                     <a
-                        href="https://t.me/kolyakolya12"
+                        href="https://t.me/dkud13"
                         target="_blank"
                         rel="noreferrer"
                         className={`${styles.iconButton} lux luxIcon`}
@@ -181,7 +181,7 @@ export const Header = () => {
                                     WhatsApp
                                 </a>
                                 <a
-                                    href="https://t.me/kolyakolya12"
+                                    href="https://t.me/dkud13"
                                     target="_blank"
                                     rel="noreferrer"
                                     className={styles.mobileActionLink}

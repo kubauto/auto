@@ -312,7 +312,7 @@ export const PreOrderPage = () => {
 
                                         <a
                                             className={`${styles.altAction} lux luxDark`}
-                                            href="https://t.me/kolyakolya12"
+                                            href="https://t.me/dkud13"
                                             target="_blank"
                                             rel="noreferrer"
                                         >
