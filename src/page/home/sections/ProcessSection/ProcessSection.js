@@ -1,68 +1,52 @@
-import { NavLink } from "react-router-dom";
-import styles from "./ProcessSection.module.css";
+import { Fragment } from 'react';
+import styles from './ProcessSection.module.css';
+import { useI18n, ROUTE_SEGMENTS } from '../../../../i18n';
+import { LocalizedNavLink } from '../../../../components/localized-link/LocalizedLink';
 
 export const ProcessSection = () => {
-    return (
-        <section className={styles.section}>
-            <div className={styles.container}>
-                <div className={styles.sectionHead}>
-                    <h2 className={styles.h2}>The process</h2>
-                    <p className={styles.sub}>Clear, documented, predictable.</p>
-                </div>
+  const { t } = useI18n();
+  const section = t('home.process');
 
-                <div className={styles.processCard}>
-                    <div className={styles.processSteps}>
-                        <div className={styles.step}>
-                            <div className={styles.stepDotActive} />
-                            <div className={styles.stepTitle}>Request</div>
-                            <div className={styles.stepSub}>Requirements</div>
-                        </div>
+  return (
+      <section className={styles.section}>
+        <div className={styles.container}>
+          <div className={styles.sectionHead}>
+            <h2 className={styles.h2}>{section.title}</h2>
+            <p className={styles.sub}>{section.sub}</p>
+          </div>
 
-                        <div className={styles.stepLine} />
-
-                        <div className={styles.step}>
-                            <div className={styles.stepDotActive} />
-                            <div className={styles.stepTitle}>Market scan</div>
-                            <div className={styles.stepSub}>Verified sources</div>
-                        </div>
-
-                        <div className={styles.stepLine} />
-
-                        <div className={styles.step}>
-                            <div className={styles.stepDotActive} />
-                            <div className={styles.stepTitle}>Verification</div>
-                            <div className={styles.stepSub}>Legal + technical</div>
-                        </div>
-
-                        <div className={styles.stepLine} />
-
-                        <div className={styles.step}>
-                            <div className={styles.stepDot} />
-                            <div className={styles.stepTitle}>Contract</div>
-                            <div className={styles.stepSub}>Fixed terms</div>
-                        </div>
-
-                        <div className={styles.stepLine} />
-
-                        <div className={styles.step}>
-                            <div className={styles.stepDot} />
-                            <div className={styles.stepTitle}>Delivery</div>
-                            <div className={styles.stepSub}>Handover</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className={styles.ctaBar}>
-                    <div>
-                        <div className={styles.ctaTitle}>Submit requirements — we return with verified options</div>
-                        <div className={styles.ctaText}>Typical selection time: a few days up to two weeks.</div>
+          <div className={styles.processCard}>
+            <div className={styles.processSteps}>
+              {section.steps.map((step, index) => (
+                  <Fragment key={step.title}>
+                    <div className={styles.step}>
+                      <div className={index < 3 ? styles.stepDotActive : styles.stepDot} />
+                      <div className={styles.stepTitle}>{step.title}</div>
+                      <div className={styles.stepSub}>{step.sub}</div>
                     </div>
 
-                    <NavLink to="/pre-order" className={`${styles.primaryButtonDark} lux luxGold`}>
-                        Start Pre-Order
-                    </NavLink>
-                </div>
+                    {index < section.steps.length - 1 && (
+                        <div className={styles.stepLine} />
+                    )}
+                  </Fragment>
+              ))}
             </div>
-        </section>
-    );
+          </div>
+
+          <div className={styles.ctaBar}>
+            <div>
+              <div className={styles.ctaTitle}>{section.ctaTitle}</div>
+              <div className={styles.ctaText}>{section.ctaText}</div>
+            </div>
+
+            <LocalizedNavLink
+                to={ROUTE_SEGMENTS.preOrder}
+                className={`${styles.primaryButtonDark} lux luxGold`}
+            >
+              {section.cta}
+            </LocalizedNavLink>
+          </div>
+        </div>
+      </section>
+  );
 };

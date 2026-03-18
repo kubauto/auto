@@ -1,5 +1,3 @@
-/* src/components/Header/Header.module.css */
-
 .header {
     position: sticky;
     top: 0;
@@ -15,23 +13,21 @@
     height: 100%;
     margin: 0 auto;
     padding: 0 24px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 24px;
 }
 
-/* Logo */
 .logo {
     display: flex;
     align-items: center;
     gap: 12px;
     text-decoration: none;
     min-width: 220px;
+    backdrop-filter: none;
 }
 
-/* OLD mark kept (unused now, but safe to keep) */
 .logoMark {
     width: 36px;
     height: 36px;
@@ -40,7 +36,6 @@
     flex: 0 0 auto;
 }
 
-/* OLD text kept (unused now, but safe to keep) */
 .logoText {
     display: flex;
     flex-direction: column;
@@ -61,7 +56,6 @@
     color: #b9bdc7;
 }
 
-/* NEW: SVG logo image (wordmark) */
 .logoImg {
     height: 42px;
     width: auto;
@@ -78,7 +72,6 @@
     flex: 0 0 auto;
 }
 
-/* Desktop nav */
 .navDesktop {
     display: flex;
     align-items: center;
@@ -120,13 +113,67 @@
     border-radius: 2px;
 }
 
-/* Desktop actions */
 .actionsDesktop {
     display: flex;
     align-items: center;
     gap: 12px;
     flex: 0 0 auto;
     white-space: nowrap;
+}
+
+.langWrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-width: 78px;
+    height: 40px;
+    border-radius: 12px;
+    background:
+            linear-gradient(180deg, rgba(201, 162, 93, 0.08) 0%, rgba(201, 162, 93, 0.03) 100%),
+            #141622;
+    border: 1px solid rgba(201, 162, 93, 0.32);
+    box-shadow:
+            inset 0 1px 0 rgba(255, 255, 255, 0.04),
+            0 8px 20px rgba(0, 0, 0, 0.18);
+    overflow: hidden;
+}
+
+.langWrap:hover {
+    border-color: rgba(201, 162, 93, 0.55);
+}
+
+.langSelect {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 0;
+    color: #f3efe6;
+    padding: 0 34px 0 14px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    outline: none;
+}
+
+.langSelect option {
+    color: #ffffff;
+    background: #11131a;
+}
+
+.langChevron {
+    position: absolute;
+    right: 13px;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid #c9a25d;
+    border-bottom: 2px solid #c9a25d;
+    transform: translateY(-60%) rotate(45deg);
+    pointer-events: none;
 }
 
 .iconButton {
@@ -159,11 +206,6 @@
     justify-content: center;
 }
 
-/* =========================
-   MOBILE MENU
-   ========================= */
-
-/* Burger */
 .burger {
     display: none;
     background: none;
@@ -192,15 +234,20 @@
     z-index: 10000;
 }
 
+.overlayOpen {
+    opacity: 1;
+    pointer-events: auto;
+}
+
 .mobileMenu {
     position: fixed;
     top: 0;
     right: 0;
-    height: 100vh;
-    width: min(86vw, 360px);
+    height: 100dvh;
+    width: min(100vw - 12px, 380px);
     max-width: 100%;
     box-sizing: border-box;
-    background: #07070a;
+    background: linear-gradient(180deg, #07070a 0%, #0c0d12 100%);
     color: #ffffff;
     transform: translateX(100%);
     transition: transform 0.28s ease;
@@ -209,24 +256,22 @@
     flex-direction: column;
     overflow: hidden;
     will-change: transform;
-}
-
-.overlayOpen {
-    opacity: 1;
-    pointer-events: auto;
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: -24px 0 48px rgba(0, 0, 0, 0.34);
 }
 
 .open {
     transform: translateX(0);
 }
 
-/* Drawer header row */
 .mobileTop {
-    height: 88px;
+    flex: 0 0 auto;
+    min-height: 88px;
     padding: 0 18px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 12px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -235,6 +280,7 @@
     align-items: center;
     gap: 10px;
     text-decoration: none;
+    min-width: 0;
 }
 
 .mobileLogoText {
@@ -254,16 +300,23 @@
     font-size: 26px;
     line-height: 1;
     cursor: pointer;
+    flex: 0 0 auto;
 }
 
-/* Scrollable content area */
+.mobileContent {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding:
+            16px 18px
+            calc(18px + env(safe-area-inset-bottom, 0px));
+}
+
 .mobileNav {
-    padding: 18px;
     display: flex;
     flex-direction: column;
     gap: 18px;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
 }
 
 .mobileLink {
@@ -272,6 +325,7 @@
     color: #ffffff;
     text-decoration: none;
     opacity: 0.92;
+    word-break: break-word;
 }
 
 .mobileLink:hover {
@@ -283,17 +337,66 @@
 }
 
 .mobileActions {
-    padding: 18px;
+    margin-top: 22px;
+    padding-top: 18px;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
+.mobileLanguageRow {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 6px;
+    min-width: 0;
+}
+
+.mobileLanguageLabel {
+    font-size: 12px;
+    font-weight: 700;
+    color: #b9bdc7;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.mobileLanguageButtons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+}
+
+.mobileLangButton {
+    min-width: 0;
+    border: 1px solid #2b2e3e;
+    background: #141622;
+    color: #ffffff;
+    border-radius: 12px;
+    padding: 10px 12px;
+    font-size: 12px;
+    font-weight: 800;
+    cursor: pointer;
+    flex: 0 0 auto;
+    transition: border-color 0.18s ease, color 0.18s ease, background 0.18s ease;
+}
+
+.mobileLangButton:hover {
+    border-color: rgba(201, 162, 93, 0.55);
+}
+
+.mobileLangButtonActive {
+    border-color: #c9a25d;
+    color: #c9a25d;
+    background: rgba(201, 162, 93, 0.08);
+}
+
 .mobileActionLink {
     color: #c9a25d;
     font-weight: 800;
     text-decoration: none;
+    word-break: break-word;
 }
 
 .mobileCTA {
@@ -307,7 +410,20 @@
     text-decoration: none;
 }
 
-/* Responsive */
+@media (max-width: 1200px) {
+    .navDesktop {
+        gap: 24px;
+    }
+
+    .container {
+        padding: 0 16px;
+    }
+
+    .primaryButton {
+        padding: 0 16px;
+    }
+}
+
 @media (max-width: 1024px) {
     .navDesktop,
     .actionsDesktop {
@@ -322,21 +438,28 @@
         height: 36px;
     }
 }
-.logo {
-    backdrop-filter: none;
-}
 
-/* Optional: tighten slightly at mid widths */
-@media (max-width: 1200px) {
-    .navDesktop {
-        gap: 24px;
+@media (max-width: 480px) {
+    .mobileMenu {
+        width: 100vw;
+        border-left: 0;
     }
 
-    .container {
-        padding: 0 16px;
+    .mobileTop {
+        padding: 0 14px;
     }
 
-    .primaryButton {
-        padding: 0 16px;
+    .mobileContent {
+        padding:
+                14px 14px
+                calc(16px + env(safe-area-inset-bottom, 0px));
+    }
+
+    .mobileLanguageButtons {
+        gap: 7px;
+    }
+
+    .mobileLangButton {
+        padding: 9px 11px;
     }
 }

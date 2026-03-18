@@ -4,6 +4,28 @@
     gap: 8px;
 }
 
+.labelRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.label {
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #121317;
+}
+
+.error {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #dc2626;
+    text-align: right;
+}
+
 .control {
     height: 54px;
     padding: 0 16px;
@@ -28,6 +50,10 @@
     box-shadow: 0 0 0 3px rgba(201, 162, 93, 0.18);
 }
 
+.errorBorder {
+    border-color: #dc2626;
+}
+
 .value {
     font-size: 14px;
     font-weight: 700;
@@ -36,7 +62,7 @@
 
 .placeholder {
     font-size: 14px;
-    font-weight: 650;
+    font-weight: 600;
     color: #9aa0aa;
 }
 
@@ -46,6 +72,7 @@
     border-right: 2px solid #6b7280;
     border-bottom: 2px solid #6b7280;
     transform: rotate(45deg);
+    flex: 0 0 auto;
 }
 
 /* Dropdown menu */

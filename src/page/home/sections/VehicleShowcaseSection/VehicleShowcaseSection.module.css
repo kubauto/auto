@@ -1,0 +1,129 @@
+.section {
+    position: relative;
+    z-index: 3;
+    margin-top: 0;
+    padding: 28px 0 28px;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.shell {
+    border-radius: 32px;
+    background:
+            linear-gradient(180deg, rgba(201, 162, 93, 0.08) 0%, rgba(201, 162, 93, 0.02) 100%),
+            #0b0b0e;
+    border: 1px solid rgba(43, 46, 62, 1);
+    padding: 20px;
+    box-shadow:
+            0 28px 56px rgba(0, 0, 0, 0.22),
+            inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.topRow {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 16px;
+}
+
+.copy {
+    max-width: 760px;
+}
+
+.kicker {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #c9a25d;
+}
+
+.h2 {
+    margin: 10px 0 0;
+    font-size: 34px;
+    line-height: 1.08;
+    font-weight: 900;
+    color: #ffffff;
+}
+
+.sub {
+    margin: 10px 0 0;
+    font-size: 14px;
+    line-height: 1.65;
+    font-weight: 500;
+    color: #cfd3db;
+}
+
+.cta {
+    flex: 0 0 auto;
+    height: 48px;
+    padding: 0 18px;
+    border-radius: 14px;
+    background: #c9a25d;
+    color: #0b0b0e;
+    font-size: 14px;
+    font-weight: 900;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+@media (max-width: 1024px) {
+    .section {
+        margin-top: 0;
+        padding: 24px 0 24px;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 0 16px;
+    }
+
+    .shell {
+        padding: 18px;
+    }
+
+    .topRow {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .h2 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 640px) {
+    .section {
+        margin-top: 0;
+        padding-bottom: 20px;
+    }
+
+    .container {
+        padding: 0 12px;
+    }
+
+    .shell {
+        border-radius: 24px;
+        padding: 14px;
+    }
+
+    .h2 {
+        font-size: 24px;
+    }
+
+    .sub {
+        font-size: 13px;
+    }
+
+    .cta {
+        width: 100%;
+    }
+}

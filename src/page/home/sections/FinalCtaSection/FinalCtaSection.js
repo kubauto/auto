@@ -1,48 +1,36 @@
-import { NavLink } from "react-router-dom";
-import styles from "./FinalCtaSection.module.css";
+import styles from './FinalCtaSection.module.css';
+import { ROUTE_SEGMENTS, useI18n } from '../../../../i18n';
+import { LocalizedNavLink } from '../../../../components/localized-link/LocalizedLink';
 
 export const FinalCtaSection = () => {
-    return (
-        <section className={styles.finalCta}>
-            <div className={styles.container}>
-                <p className={styles.kickerGold}>READY TO BEGIN</p>
-                <h2 className={styles.h2OnDark}>Start your pre-order request</h2>
-                <p className={styles.subOnDark}>We’ll respond with verified options and clear terms.</p>
+  const { t } = useI18n();
+  const section = t('home.finalCta');
 
-                <div className={styles.finalActions}>
-                    <NavLink to="/pre-order" className={`${styles.primaryButton} lux luxGold`}>
-                        Proceed to Pre-Order
-                    </NavLink>
+  return (
+    <section className={styles.finalCta}>
+      <div className={styles.container}>
+        <p className={styles.kickerGold}>{section.kicker}</p>
+        <h2 className={styles.h2OnDark}>{section.title}</h2>
+        <p className={styles.subOnDark}>{section.sub}</p>
 
-                    <a
-                        href="https://wa.me/37068803122"
-                        target="_blank"
-                        rel="noreferrer"
-                        className={`${styles.secondaryButton} lux luxDark`}
-                    >
-                        WhatsApp
-                    </a>
+        <div className={styles.finalActions}>
+          <LocalizedNavLink to={ROUTE_SEGMENTS.preOrder} className={`${styles.primaryButton} lux luxGold`}>
+            {section.cta}
+          </LocalizedNavLink>
+          <a href="https://wa.me/37068803122" target="_blank" rel="noreferrer" className={`${styles.secondaryButton} lux luxDark`}>
+            {t('common.whatsapp')}
+          </a>
+          <a href="https://t.me/dkud13" target="_blank" rel="noreferrer" className={`${styles.secondaryButton} lux luxDark`}>
+            {t('common.telegram')}
+          </a>
+        </div>
 
-                    <a href="https://t.me/dkud13" target="_blank" rel="noreferrer" className={`${styles.secondaryButton} lux luxDark`}>
-                        Telegram
-                    </a>
-                </div>
-
-                <div className={styles.contactStrip}>
-                    <div>
-                        <div className={styles.contactLabel}>Phone</div>
-                        <div className={styles.contactValue}>+370 688 03122</div>
-                    </div>
-                    <div>
-                        <div className={styles.contactLabel}>Email</div>
-                        <div className={styles.contactValue}>uabkubauto@gmail.com</div>
-                    </div>
-                    <div>
-                        <div className={styles.contactLabel}>Office</div>
-                        <div className={styles.contactValueSmall}>Dzūkų g. 6a, Vilnius</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
+        <div className={styles.contactStrip}>
+          <div><div className={styles.contactLabel}>{t('common.phone')}</div><div className={styles.contactValue}>+370 688 03122</div></div>
+          <div><div className={styles.contactLabel}>{t('common.email')}</div><div className={styles.contactValue}>uabkubauto@gmail.com</div></div>
+          <div><div className={styles.contactLabel}>{t('common.office')}</div><div className={styles.contactValueSmall}>Dzūkų g. 6a, Vilnius</div></div>
+        </div>
+      </div>
+    </section>
+  );
 };

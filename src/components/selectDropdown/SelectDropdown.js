@@ -17,15 +17,21 @@ export const SelectDropdown = ({
         const onClickOutside = (e) => {
             if (!ref.current?.contains(e.target)) setOpen(false);
         };
+
         document.addEventListener("mousedown", onClickOutside);
-        return () => document.removeEventListener("mousedown", onClickOutside);
+
+        return () => {
+            document.removeEventListener("mousedown", onClickOutside);
+        };
     }, []);
+
+    const selectedOption = options.find((opt) => opt.value === value);
 
     return (
         <div className={styles.field} ref={ref}>
             <div className={styles.labelRow}>
                 <span className={styles.label}>{label}</span>
-                {error && <span className={styles.error}>{error}</span>}
+                {error ? <span className={styles.error}>{error}</span> : null}
             </div>
 
             <button
@@ -33,28 +39,28 @@ export const SelectDropdown = ({
                 className={`${styles.control} ${error ? styles.errorBorder : ""}`}
                 onClick={() => setOpen((v) => !v)}
             >
-                <span className={value ? styles.value : styles.placeholder}>
-                    {value || placeholder}
+                <span className={selectedOption ? styles.value : styles.placeholder}>
+                    {selectedOption ? selectedOption.label : placeholder}
                 </span>
                 <span className={styles.chevron} />
             </button>
 
-            {open && (
+            {open ? (
                 <div className={styles.menu}>
                     {options.map((opt) => (
                         <div
-                            key={opt}
-                            className={`${styles.item} ${opt === value ? styles.active : ""}`}
+                            key={opt.value}
+                            className={`${styles.item} ${opt.value === value ? styles.active : ""}`}
                             onClick={() => {
-                                onChange(name, opt);
+                                onChange(name, opt.value);
                                 setOpen(false);
                             }}
                         >
-                            {opt}
+                            {opt.label}
                         </div>
                     ))}
                 </div>
-            )}
+            ) : null}
         </div>
     );
 };

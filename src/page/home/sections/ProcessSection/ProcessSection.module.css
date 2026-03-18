@@ -16,7 +16,7 @@
 .h2 {
     margin: 0;
     font-size: 34px;
-    font-weight: 950;
+    font-weight: 900;
     color: #121317;
 }
 
@@ -37,15 +37,16 @@
 .processSteps {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     gap: 18px;
 }
 
 .step {
+    flex: 0 0 120px;
+    min-width: 120px;
     display: grid;
     gap: 6px;
     justify-items: center;
-    min-width: 120px;
+    text-align: center;
 }
 
 .stepDotActive,
@@ -79,19 +80,20 @@
 
 .stepTitle {
     font-size: 14px;
-    font-weight: 950;
+    font-weight: 800;
     color: #121317;
 }
 
 .stepSub {
     font-size: 12px;
-    font-weight: 650;
+    font-weight: 600;
     color: #6b7280;
 }
 
 .stepLine {
+    flex: 1 1 0;
+    min-width: 40px;
     height: 2px;
-    flex: 1 1 auto;
     background: #e6e7ea;
 }
 
@@ -109,7 +111,7 @@
 
 .ctaTitle {
     font-size: 18px;
-    font-weight: 950;
+    font-weight: 800;
     color: #ffffff;
 }
 
@@ -127,7 +129,7 @@
     background: #c9a25d;
     color: #0b0b0e;
     font-size: 15px;
-    font-weight: 950;
+    font-weight: 800;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
@@ -152,7 +154,6 @@
 }
 
 @media (max-width: 640px) {
-    /* vertical timeline layout */
     .processSteps {
         flex-direction: column;
         align-items: center;
@@ -160,28 +161,25 @@
         gap: 0;
     }
 
-    /* step becomes centered, stacked */
     .step {
+        flex: 0 0 auto;
         min-width: 0;
         width: 100%;
         max-width: 320px;
-
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
-
         padding: 10px 0;
         gap: 6px;
     }
 
-    /* connector becomes vertical and centered */
     .stepLine {
-        display: block;               /* override 1024px hide */
-        flex: 0 0 auto;               /* stop flex stretching */
+        display: block;
+        flex: 0 0 auto;
         width: 2px;
         height: 26px;
-        background: #e6e7ea;
+        min-width: 0;
         margin: 0 auto;
     }
 }
