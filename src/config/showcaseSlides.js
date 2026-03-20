@@ -44,4 +44,9 @@ export const showcaseSlides = [
         alt: 'Mercedes-Maybach S-Class',
         position: '38% 68%',
     },
+    {
+        src: '/images/showcase/car_10.jpg',
+        alt: 'Ferrari premium vehicle',
+        position: 'center 60%',
+    },
 ];
